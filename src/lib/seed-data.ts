@@ -17,7 +17,7 @@ const teams: Team[] = [
 ]
 
 // Fase 1: pontos corridos, 8 times, cronograma real (crono_de_jogos.xlsx).
-// Nenhum jogo aconteceu ainda — todos "agendado", sem placar. Lance os resultados
+// Jogos já realizados têm placar; os demais ficam "agendado". Lance os resultados
 // em Admin > Jogos conforme as rodadas forem acontecendo.
 //
 // Obs: na planilha, o "Jogo 4" de 22/09 estava com o time da casa em branco
@@ -65,12 +65,12 @@ const fase1Matches: Match[] = [
   fase1('m8', 4, '2026-09-24', '22:00', 't3', 't7', [2, 1]),
 
   // Rodada 5 - ter, 2026-09-29
-  fase1('m9', 5, '2026-09-29', '21:00', 't2', 't8'),
-  fase1('m10', 5, '2026-09-29', '22:00', 't5', 't7'),
+  fase1('m9', 5, '2026-09-29', '21:00', 't2', 't8', [4, 0]),
+  fase1('m10', 5, '2026-09-29', '22:00', 't5', 't7', [0, 0]),
 
   // Rodada 6 - qui, 2026-10-01
-  fase1('m11', 6, '2026-10-01', '21:00', 't1', 't4'),
-  fase1('m12', 6, '2026-10-01', '22:00', 't3', 't6'),
+  fase1('m11', 6, '2026-10-01', '21:00', 't1', 't4', [3, 0]),
+  fase1('m12', 6, '2026-10-01', '22:00', 't3', 't6', [2, 1]),
 
   // Rodada 7 - qui, 2026-10-08
   fase1('m13', 7, '2026-10-08', '20:30', 't5', 't1'),
@@ -245,6 +245,20 @@ const stats: PlayerMatchStat[] = [
   stat('s27', 'p17', 'm7'),
   stat('s28', 'p14', 'm7'),
   stat('s29', 'p10', 'm7', { assists: 1 }),
+
+  // Rodada 6 - WE 3x0 WMcCann (m11)
+  stat('s30', 'p15', 'm11'),
+  stat('s31', 'p18', 'm11'),
+  stat('s32', 'p4', 'm11'),
+  stat('s33', 'p5', 'm11'),
+  stat('s34', 'p1', 'm11', { goals: 1 }),
+  stat('s35', 'p3', 'm11', { assists: 1 }),
+  stat('s36', 'p8', 'm11', { redCards: 1 }),
+  stat('s37', 'p16', 'm11', { goals: 1 }),
+  stat('s38', 'p7', 'm11'),
+  stat('s39', 'p13', 'm11'),
+  stat('s40', 'p10', 'm11'),
+  stat('s41', 'p12', 'm11'),
 ]
 
 export const seedData: ChampionshipData = {
