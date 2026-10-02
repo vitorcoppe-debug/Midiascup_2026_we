@@ -5,10 +5,22 @@ import type { ChampionshipData, Coach, Match, Player, PlayerMatchStat, Team } fr
 // v9: Renan Cano virou o técnico do time (comissão técnica) e Marcelo Lopes
 // assumiu a camisa 8 — dados salvos no formato antigo são ignorados de propósito.
 const STORAGE_KEY = 'midias-cup-data-v9'
+const SEED_SIG_KEY = 'midias-cup-seed-sig'
+
+// Assinatura do seed-data.ts: quando o código muda (novos resultados publicados),
+// os dados guardados no navegador deixam de valer e todo mundo vê a versão nova.
+// Edições feitas no Admin e ainda não salvas no código se perdem nessa hora.
+const SEED_SIG = (() => {
+  const s = JSON.stringify(seedData)
+  let h = 0
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0
+  return String(h)
+})()
 
 function loadInitialData(): ChampionshipData {
   if (typeof window === 'undefined') return seedData
   try {
+    if (window.localStorage.getItem(SEED_SIG_KEY) !== SEED_SIG) return seedData
     const raw = window.localStorage.getItem(STORAGE_KEY)
     if (!raw) return seedData
     const parsed = JSON.parse(raw) as ChampionshipData
@@ -57,6 +69,7 @@ export function ChampionshipProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    window.localStorage.setItem(SEED_SIG_KEY, SEED_SIG)
   }, [data])
 
   const myTeam = useMemo(() => data.teams.find((t) => t.id === data.myTeamId), [data.teams, data.myTeamId])
