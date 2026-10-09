@@ -73,8 +73,8 @@ const fase1Matches: Match[] = [
   fase1('m12', 6, '2026-10-01', '22:00', 't3', 't6', [2, 1]),
 
   // Rodada 7 - qui, 2026-10-08
-  fase1('m13', 7, '2026-10-08', '20:30', 't5', 't1'),
-  fase1('m14', 7, '2026-10-08', '21:30', 't6', 't8'),
+  fase1('m13', 7, '2026-10-08', '20:30', 't5', 't1', [1, 5]),
+  fase1('m14', 7, '2026-10-08', '21:30', 't6', 't8', [4, 2]),
 
   // Rodada 8 - qui, 2026-10-15
   fase1('m15', 8, '2026-10-15', '20:30', 't2', 't3'),
@@ -259,6 +259,23 @@ const stats: PlayerMatchStat[] = [
   stat('s39', 'p13', 'm11'),
   stat('s40', 'p10', 'm11'),
   stat('s41', 'p12', 'm11'),
+
+  // Rodada 7 - Essence 1x5 WE (m13)
+  stat('s42', 'p15', 'm13'),
+  stat('s43', 'p2', 'm13'),
+  stat('s44', 'p18', 'm13', { assists: 1 }),
+  stat('s45', 'p9', 'm13', { redCards: 1 }),
+  stat('s46', 'p4', 'm13', { yellowCards: 1 }),
+  stat('s47', 'p5', 'm13'),
+  stat('s48', 'p1', 'm13'),
+  stat('s49', 'p3', 'm13', { goals: 1, assists: 1 }),
+  stat('s50', 'p8', 'm13', { played: false }),
+  stat('s51', 'p16', 'm13', { goals: 2 }),
+  stat('s52', 'p12', 'm13'),
+  stat('s53', 'p7', 'm13'),
+  stat('s54', 'p13', 'm13'),
+  stat('s55', 'p17', 'm13', { played: false }),
+  stat('s56', 'p10', 'm13'),
 ]
 
 export const seedData: ChampionshipData = {
