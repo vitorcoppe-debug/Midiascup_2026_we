@@ -85,8 +85,8 @@ const fase1Matches: Match[] = [
   fase1('m18', 9, '2026-10-20', '22:00', 't3', 't4', [2, 0]),
 
   // Rodada 10 - qui, 2026-10-22
-  fase1('m19', 10, '2026-10-22', '20:30', 't5', 't8'),
-  fase1('m20', 10, '2026-10-22', '22:00', 't2', 't1'),
+  fase1('m19', 10, '2026-10-22', '20:30', 't5', 't8', [1, 4]),
+  fase1('m20', 10, '2026-10-22', '22:00', 't2', 't1', [2, 4]),
 
   // Rodada 11 - qui, 2026-10-29
   fase1('m21', 11, '2026-10-29', '21:00', 't3', 't8'),
@@ -276,6 +276,20 @@ const stats: PlayerMatchStat[] = [
   stat('s54', 'p13', 'm13'),
   stat('s55', 'p17', 'm13', { played: false }),
   stat('s56', 'p10', 'm13'),
+
+  // Rodada 10 - Ogilvy 2x4 WE (m20)
+  stat('s57', 'p15', 'm20'),
+  stat('s58', 'p2', 'm20'),
+  stat('s59', 'p18', 'm20', { goals: 1 }),
+  stat('s60', 'p4', 'm20', { yellowCards: 1 }),
+  stat('s61', 'p5', 'm20'),
+  stat('s62', 'p3', 'm20', { goals: 2 }),
+  stat('s63', 'p8', 'm20', { goals: 1 }),
+  stat('s64', 'p16', 'm20', { assists: 1 }),
+  stat('s65', 'p12', 'm20'),
+  stat('s66', 'p7', 'm20'),
+  stat('s67', 'p13', 'm20'),
+  stat('s68', 'p10', 'm20', { assists: 1 }),
 ]
 
 export const seedData: ChampionshipData = {
