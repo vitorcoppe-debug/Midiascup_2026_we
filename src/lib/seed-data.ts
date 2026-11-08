@@ -93,8 +93,8 @@ const fase1Matches: Match[] = [
   fase1('m22', 11, '2026-10-29', '21:30', 't2', 't7', [0, 0]),
 
   // Rodada 12 - qui, 2026-11-05
-  fase1('m23', 12, '2026-11-05', '21:00', 't5', 't4'),
-  fase1('m24', 12, '2026-11-05', '21:30', 't1', 't6'),
+  fase1('m23', 12, '2026-11-05', '21:00', 't5', 't4', [5, 1]),
+  fase1('m24', 12, '2026-11-05', '21:30', 't1', 't6', [6, 3]),
 
   // Rodada 13 - qui, 2026-11-12
   fase1('m25', 13, '2026-11-12', '20:30', 't5', 't3'),
@@ -290,6 +290,18 @@ const stats: PlayerMatchStat[] = [
   stat('s66', 'p7', 'm20'),
   stat('s67', 'p13', 'm20'),
   stat('s68', 'p10', 'm20', { assists: 1 }),
+
+  // Rodada 12 - WE 6x3 Galeria (m24)
+  stat('s69', 'p15', 'm24'),
+  stat('s70', 'p2', 'm24'),
+  stat('s71', 'p18', 'm24'),
+  stat('s72', 'p9', 'm24', { yellowCards: 1 }),
+  stat('s73', 'p5', 'm24'),
+  stat('s74', 'p3', 'm24', { goals: 2 }),
+  stat('s75', 'p8', 'm24', { goals: 1 }),
+  stat('s76', 'p16', 'm24', { goals: 2, assists: 2 }),
+  stat('s77', 'p7', 'm24', { yellowCards: 1 }),
+  stat('s78', 'p10', 'm24'),
 ]
 
 export const seedData: ChampionshipData = {
